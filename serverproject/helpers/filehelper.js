@@ -9,8 +9,9 @@ const storage = multer.diskStorage({
         cb(null, new Date().toISOString().replace(/:/g, '-') + '-' + file.originalname);
     }
 });
+
 const filefilter = (req, file, cb) => {
-    if (file.mimetype === 'image/png' || file.mimetype === 'image/jpg' 
+    if (file.mimetype === 'image/png' || file.mimetype === 'image/jpg'
         || file.mimetype === 'image/jpeg'){
             cb(null, true);
         }else {
